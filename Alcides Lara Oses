@@ -1,0 +1,154 @@
+public class Computadora {
+    // creacion de las distintas variables para almacenar la informacion necesaria
+    private String marca;
+    private String modelo;
+    private String discoDuro;
+    private String ram;
+    private String color;
+    private String sistemaOperativo;
+    private String estado;
+
+    public Computadora() { // constructor de la clase creando las variables en vacio y apagado el estado
+        marca=modelo=discoDuro=ram=color=sistemaOperativo=""; // asignacion de vacio a las variables
+        estado="Apagado"; // se setea el estado en apagado
+    }
+
+    public String getMarca() { // metodo que devuelve la marca
+        return marca;
+    }
+
+    public void setMarca(String marca) { // metodo que setea la marca
+        this.marca = marca;
+    }
+
+    public String getModelo() { // metodo que devuelve el modelo
+        return modelo;
+    }
+
+    public void setModelo(String modelo) { // metodo que setea el modelo
+        this.modelo = modelo;
+    }
+
+    public String getDiscoDuro() { // metodo que devuelve el tamaño del disco duro
+        return discoDuro;
+    }
+
+    public void setDiscoDuro(String discoDuro) { // metodo que setea el tamaño del disco duro
+        this.discoDuro = discoDuro;
+    }
+
+    public String getRam() { // metodo que devuelve la ram
+        return ram;
+    }
+
+    public void setRam(String ram) { // metodo que setea la ram
+        this.ram = ram;
+    }
+
+    public String getColor() { // metodo que devuelve el color
+        return color;
+    }
+
+    public void setColor(String color) { // metodo que setea el color
+        this.color = color;
+    }
+
+    public String getSistemaOperativo() { // metodo que devuelve el sistema operativo
+        return sistemaOperativo;
+    }
+
+    public void setSistemaOperativo(String sistemaOperativo) { // metodo que setea el sistema operativo
+        this.sistemaOperativo = sistemaOperativo;
+    }
+
+    public String getEstado() { // metodo que devuelve el estado
+        return estado;
+    }
+
+    public void setEstado(String estado) { // metodo que devuelve el estado
+        this.estado = estado;
+    }
+    
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class Main {
+    public static void main(String args[]){ // main
+        Carro carro=new Carro(); // creacion de un objeto carro
+        System.out.println("Escriba el color del carro"); // impresion de instrucciones para escribir     
+        carro.setColor(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba la marca del carro"); // impresion de instrucciones para escribir        
+        carro.setMarca(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba la placa del carro"); // impresion de instrucciones para escribir
+        carro.setPlaca(GetDatos()); // setea el valor del atributo
+        carro.setEstado("Encendido"); // setea el valor del atributo
+        System.out.println("La descripcion de su carro seria:\n Marca: "+carro.getMarca()+"\n Color: "+carro.getColor()+"\n Placa: "+carro.getPlaca()+"\nEl estado de su carro es: "+carro.getEstado()+"\n"); // impresion ded el estado del objeto despues de introducir todos los valores
+       
+        Computadora compu=new Computadora();
+        System.out.println("Escriba el color de la computadora"); // impresion de instrucciones para escribir   
+        compu.setColor(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba la marca de la computadora"); // impresion de instrucciones para escribir        
+        compu.setMarca(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba la modelo de la computadora"); // impresion de instrucciones para escribir        
+        compu.setModelo(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba el tamaño del disco duro de la computadora en GB"); // impresion de instrucciones para escribir        
+        compu.setDiscoDuro(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba la RAM que tiene la computadora en GB"); // impresion de instrucciones para escribir        
+        compu.setRam(GetDatos()); // setea el valor del atributo
+        System.out.println("Escriba el sistema operativo que tiene la computadora"); // impresion de instrucciones para escribir        
+        compu.setSistemaOperativo(GetDatos()); // setea el valor del atributo
+        compu.setEstado("Encendido"); // setea el valor del atributo
+        System.out.println("La descripcion de su computadora seria:\n Marca: "+compu.getMarca()+"\n Color: "+compu.getColor()+"\n Modelo: "+compu.getModelo()+"\n Tamaño de disco duro: "+compu.getDiscoDuro()+" GB\n Ram: "+compu.getRam()+" GB\n Sistema Operativo: "+compu.getSistemaOperativo()+"\nEl estado de su computadora es: "+compu.getEstado()+"\n"); // impresion ded el estado del objeto despues de introducir todos los valores
+    }
+    private static String GetDatos(){ // metodo que permite capturar la informacion del teclado desde consola
+        String dato; // variable de almacenamiento de informacion
+        Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
+        dato = entradaEscaner.nextLine (); //Invocamos un método sobre un objeto Scanner para capturar la informacion digitada
+        return dato; // devolvemos la informacion recopilada
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+public class Carro {
+    private String marca; // variable en la que se almacenara la marca
+    private String color; // variable en la que se almacenara el color
+    private String placa; // variable en la que se almacenara la placa
+    private String estado; // variable en la que se almacenara el estado
+
+    public Carro() { // constructor de la clase creando las variables en vacio y apagado el estado
+        marca=color=placa="";
+        estado="Apagado";
+    }
+
+    public String getMarca() { // devuelve la marca
+        return marca;
+    }
+
+    public String getColor() { // devuelve el color
+        return color;
+    }
+
+    public String getPlaca() { // devuelve la placa
+        return placa;
+    }
+
+    public String getEstado() { // devuelve el estado
+        return estado;
+    }
+
+    public void setMarca(String marca) { // setea el valor de la marca
+        this.marca = marca;
+    }
+
+    public void setColor(String color) { // setea el valor del color
+        this.color = color;
+    }
+
+    public void setPlaca(String placa) { // setea el valor de la placa
+        this.placa = placa;
+    }
+
+    public void setEstado(String estado) { // setea el valor del estado
+        this.estado = estado;
+    }       
+}
